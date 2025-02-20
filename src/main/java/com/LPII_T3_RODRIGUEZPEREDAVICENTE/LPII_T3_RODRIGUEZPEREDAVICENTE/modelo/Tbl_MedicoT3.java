@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "TBL_MEDICOT3")
 @Data // Lombok genera automáticamente getters, setters y otros métodos útiles
@@ -30,6 +32,7 @@ public class Tbl_MedicoT3 {
 	private String estadoCivilT3;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimT3;
 
 	public Integer getIdMedicoT3() {
@@ -86,6 +89,22 @@ public class Tbl_MedicoT3 {
 
 	public void setFechaNacimT3(Date fechaNacimT3) {
 		this.fechaNacimT3 = fechaNacimT3;
+	}
+
+	public Tbl_MedicoT3(Integer idMedicoT3, String nombreT3, String apellidoT3, String emailT3, String dniT3,
+			String estadoCivilT3, Date fechaNacimT3) {
+		super();
+		this.idMedicoT3 = idMedicoT3;
+		this.nombreT3 = nombreT3;
+		this.apellidoT3 = apellidoT3;
+		this.emailT3 = emailT3;
+		this.dniT3 = dniT3;
+		this.estadoCivilT3 = estadoCivilT3;
+		this.fechaNacimT3 = fechaNacimT3;
+	}
+
+	public Tbl_MedicoT3() {
+		//super();
 	}
 
 	

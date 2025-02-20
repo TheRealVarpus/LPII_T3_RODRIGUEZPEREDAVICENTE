@@ -1,12 +1,13 @@
 package com.LPII_T3_RODRIGUEZPEREDAVICENTE.LPII_T3_RODRIGUEZPEREDAVICENTE.servicio;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.LPII_T3_RODRIGUEZPEREDAVICENTE.LPII_T3_RODRIGUEZPEREDAVICENTE.modelo.Tbl_MedicoT3;
 import com.LPII_T3_RODRIGUEZPEREDAVICENTE.LPII_T3_RODRIGUEZPEREDAVICENTE.repositorio.I_MedicoT3Repositorio;
 
+@Service
 public class MedicoT3ServicioImp implements I_MedicoT3Servicio{
 	
 	@Autowired
@@ -39,7 +40,7 @@ public class MedicoT3ServicioImp implements I_MedicoT3Servicio{
 	@Override
 	public List<Tbl_MedicoT3> buscarPorNombre(String nombre) {
 		// TODO Auto-generated method stub
-		return imedicorepositorio.findByNombreContainingIgnoreCase(nombre);
+		return imedicorepositorio.findByNombreT3ContainingIgnoreCase(nombre);
 	}
 
 }
